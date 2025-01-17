@@ -1,6 +1,7 @@
             new ButtonInfo[] { // Main Mods
                 new ButtonInfo { buttonText = "Settings", method =() => SettingsMods.EnterSettings(), isTogglable = false, toolTip = "Opens the main settings page for the menu."},
                     new ButtonInfo { buttonText = "Join Discord", method =() => JoinDiscord.JoinDiscordMod(), toolTip = "Joins My Discord Server.", isTogglable = false,},
+                    new ButtonInfo { buttonText = "Panic", method =() => Panic.PanicMod(), toolTip = "Diables All Mods.", isTogglable = false,},
                     new ButtonInfo { buttonText = "Movement", method =() => Global.MovementMods(), toolTip = "Movement Folder.", isTogglable = false},
                     new ButtonInfo { buttonText = "Ghost Trolling", method =() => Global.GhostTrolling(), toolTip = "Ghost Troll Folder.", isTogglable = false},
                     new ButtonInfo { buttonText = "World Mods", method =() => Global.WorldMods(), toolTip = "World Mods Folder.", isTogglable = false},
@@ -8,6 +9,8 @@
                     new ButtonInfo { buttonText = "Visual Mods", method =() => Global.VisualMods(), toolTip = "World Mods Folder.", isTogglable = false},
                     new ButtonInfo { buttonText = "Advantage Mods", method =() => Global.AdvantageMods(), toolTip = "Advantage Mods Folder.", isTogglable = false},
                     new ButtonInfo { buttonText = "Projectile Mods", method =() => Global.ProjectileMods(), toolTip = "Projectile Mods Folder.", isTogglable = false},
+                    new ButtonInfo { buttonText = "Fun Mods", method =() => Global.FunMods(), toolTip = "Fun Mods Folder.", isTogglable = false},
+                    new ButtonInfo { buttonText = "Safety Mods", method =() => Global.SafetyMods(), toolTip = "Safety Mods Folder.", isTogglable = false},
             },
 
             new ButtonInfo[] { // Settings
@@ -47,6 +50,7 @@
                 new ButtonInfo { buttonText = "No Tag Freeze", method =() => NoTagFreeze.NoTagFreezeMod(), toolTip = "Disables Tag Freeze."},
                 new ButtonInfo { buttonText = "Mosa Boost", method =() => NoTagFreeze.NoTagFreezeMod(), toolTip = "Mosa Boost."},
                 new ButtonInfo { buttonText = "Low Gravity", method =() => ZeroGrav.ZeroGravity(), toolTip = "Lowers Gravity."},
+                new ButtonInfo { buttonText = "WASD Fly", method =() => keyboardfly.keyboardflymod(), toolTip = "Move Using WASD On Your Keyboard."},
             },
 
             new ButtonInfo[] { // Ghost Trolling Folder
@@ -54,7 +58,6 @@
                 new ButtonInfo { buttonText = "Spaz", method =() => Spaz.SpazMod(), toolTip = "Spaz Out."},
                 new ButtonInfo { buttonText = "Ghost Monke", method =() => GhostMonkey.GhostMonkemod(), toolTip = "Freezes Your Rig."},
                 new ButtonInfo { buttonText = "Invis Monke", method =() => InvisMonke.invismonkey(), toolTip = "Makes You Invisible."},
-                new ButtonInfo { buttonText = "Anti Report", method =() => AntiReport.AntiReportmod(), toolTip = "Disconnect When Someone Tries To Report You."},
                 new ButtonInfo { buttonText = "Long Arms", method =() => LongArms.LongArmsMod(), toolTip = "Makes Your Arms Longer."},
                 new ButtonInfo { buttonText = "Fix Long Arms", method =() => FixArms.FixLongArmsMod(), toolTip = "Makes Your Arms Normal."},
                 new ButtonInfo { buttonText = "No Finger Movement", method =() => NoFingerMovement.NoFinger(), toolTip = "Stops Fingers From Moving."},
@@ -80,16 +83,14 @@
                     new ButtonInfo { buttonText = "Disable Quit Box", method =() => DisableQuitBox.DisableQuitBoxMod(), toolTip = "Disables The Quit Box Below The Map."},
                     new ButtonInfo { buttonText = "Enable Network Triggers", method =() => EnableNetworkTriggers.EnabledNetworkTriggers(), toolTip = "Enables The Network Triggers."},
                     new ButtonInfo { buttonText = "Enable Quit Box", method =() => EnableQuitBox.EnableQuitBoxMod(), toolTip = "Enables The Quit Box Below The Map."},
-                    new ButtonInfo { buttonText = "Set Room Private", method =() => SetRoomPrivate.MakeRoomPrivate(), toolTip = "Makes The Room Your In Private."},
-                    new ButtonInfo { buttonText = "Set Room Public", method =() => SetRoomPublic.MakeRoomPublic(), toolTip = "Makes The Room Your In Public."},
+                    new ButtonInfo { buttonText = "Set Room Private", method =() => SetRoomPrivate.MakeRoomPrivate(), toolTip = "Makes The Room Your In Private.", isTogglable=false,},
+                    new ButtonInfo { buttonText = "Set Room Public", method =() => SetRoomPublic.MakeRoomPublic(), toolTip = "Makes The Room Your In Public.", isTogglable=false,},
                     new ButtonInfo { buttonText = "Anti Water", method =() => AntiWater.NoWaterPhysics(), toolTip = "Anti Water Physics."},
                     new ButtonInfo { buttonText = "Walk On Water", method =() => GrabCamera.GrabCameraMod(), toolTip = "Walk On Water Like Jesus."},
                     new ButtonInfo { buttonText = "Fix Water", method =() => GrabCamera.GrabCameraMod(), toolTip = "Make Water Normal Again."},
-                    new ButtonInfo { buttonText = "CS Stick", method =() => CS_Stick.totallyssstickcode(), toolTip = "Client Sided Stick."},
                     new ButtonInfo {buttonText = "Grab Beach Ball", method =() => GrabBeachBall.GrabBeachBallMod(), toolTip = "Grabs The Beach Ball."},
                     new ButtonInfo { buttonText = "No Name", method =() => NoName.NoNameMod(), toolTip = "Removes Your Name."},
                     new ButtonInfo { buttonText = "No Wind", method =() => NoWind.NoWindmod(), toolTip = "Anti Wind."},
-                    new ButtonInfo { buttonText = "RGB All (CS)", method =() => RGBAll.MakeEveryoneRGB(), toolTip = "Makes Everyone RGB (CS)."},
                     new ButtonInfo { buttonText = "Spaz Bug", method =() => SpazBug.SpazBugMod(), toolTip = "Spaz Out Doug The Bug."},
                     new ButtonInfo { buttonText = "Spaz Bat", method =() => SpazBat.SpazBatMod(), toolTip = "Spaz Out Matt The Bat."},
             },
@@ -104,12 +105,10 @@
                 new ButtonInfo { buttonText = "Beacons", method =() => Beacons.BeaconsMod(), toolTip = "Beacons Above Everyones Heads."},
                 new ButtonInfo { buttonText = "Name Tags", method =() => NameTags.NameTagsMod(), toolTip = "Names Above Everyones Heads."},
                 new ButtonInfo { buttonText = "FPS Boost", method =() => FPSBoost.AssQuality(), toolTip = "Makes Quality Bad For Higher FPS."},
-                new ButtonInfo { buttonText = "Bone Esp", method =() => BoneESP.BoneESPMod(), toolTip = "An ESP That Looks Like Bones."},
             },
 
             new ButtonInfo[] { // Rig Mods
                 new ButtonInfo { buttonText = "Return", method =() => Global.ReturnHome(), isTogglable = false, toolTip = "Returns To Main Page Of The Menu."},
-                new ButtonInfo { buttonText = "Punch Mod", method =() => PunchMod.BetterPunchMod(), toolTip = "Talk Shit Get Hit."},
                 new ButtonInfo { buttonText = "Pregnant", method =() => Pregnant.PregnantMod(), toolTip = "Become Pregnant."},
                 new ButtonInfo { buttonText = "Spin Head X", method =() => SpinHead.SpinHeadX(), toolTip = "Spin Your Head."},
                 new ButtonInfo { buttonText = "Spin Head Y", method =() => SpinHead2.SpinHeadYMod(), toolTip = "Spin Your Head."},
@@ -124,6 +123,7 @@
                 new ButtonInfo { buttonText = "Pee", method =() => PeeMod.GoBathroom(), toolTip = "Piss On People."},
                 new ButtonInfo { buttonText = "Spit", method =() => Spit.SpitMod(), toolTip = "Spit On People."},
                 new ButtonInfo { buttonText = "Vomit", method =() => Vomit.VomitMod(), toolTip = "Vomit On People."},
+                new ButtonInfo { buttonText = "Poop", method =() => Poop.PoopMod(), toolTip = "Poop On People."},
                 new ButtonInfo { buttonText = "Apple Spammer", method =() => AppleSpammer.Applespammmer(), toolTip = "Apple Spammer."},
                 new ButtonInfo { buttonText = "Candy Cane Spammer", method =() => CandyCaneGiftSpammer.candycanegiftpammmer(), toolTip = "Candy Cane Spammer."},
                 new ButtonInfo { buttonText = "Cloud Spammer", method =() => CloudSpammer.cloudspammmerMod(), toolTip = "Cloud Spammer."},
@@ -145,9 +145,29 @@
 
             new ButtonInfo[] { // Advantage Mods
                 new ButtonInfo { buttonText = "Return", method =() => Global.ReturnHome(), isTogglable = false, toolTip = "Returns To Main Page Of The Menu."},
+                new ButtonInfo { buttonText = "Unlock Comp", method =() => UnlockComp.UnlockCompetitive(), toolTip = "Unlock Competitive Queue."},
                 new ButtonInfo { buttonText = "Tag All", method =() => TagAll.TagAllMod(), toolTip = "Tags Everyone In The Lobby."},
                 new ButtonInfo { buttonText = "Tag Aura", method =() => TagAura.TagAuraMod(), toolTip = "Tags Everyone Around You."},
+                new ButtonInfo { buttonText = "Anti Tag", method =() => AntiTag.AntiTagMod(), toolTip = "Become Untaggable."},
                 new ButtonInfo { buttonText = "Wall Walk", method =() => WallWalk.WallWalkMod(), toolTip = "Walk On Walls."},
+                new ButtonInfo { buttonText = "Low HZ", method =() => LowHZ.LowHZMod(), toolTip = "Lower Your HZ."},
+            },
+
+            new ButtonInfo[] { // Fun Mods
+                new ButtonInfo { buttonText = "Return", method =() => Global.ReturnHome(), isTogglable = false, toolTip = "Returns To Main Page Of The Menu."},
+                new ButtonInfo { buttonText = "Punch Mod", method =() => PunchMod.BetterPunchMod(), toolTip = "Talk Shit Get Hit."},
+                new ButtonInfo { buttonText = "RGB All (CS)", method =() => RGBAll.MakeEveryoneRGB(), toolTip = "Makes Everyone RGB (CS)."},
+                new ButtonInfo { buttonText = "Grab All IDS", method =() => GrabAllIDs.GrabAllIDsMod(), toolTip = "Grabs Everyones Player IDS.", isTogglable =false},
+                new ButtonInfo { buttonText = "CS Stick", method =() => CS_Stick.totallyssstickcode(), toolTip = "Client Sided Stick."},
+                new ButtonInfo { buttonText = "CS Admin Badge", method =() => AdminBadge.AdminBadgeMod(), toolTip = "Client Sided Admin Badge."},
+                new ButtonInfo { buttonText = "Solid Players", method =() => SolidPlayers.SolidPlayersMod(), toolTip = "Make Players Solid."},
+                new ButtonInfo { buttonText = "Strobe", method =() => Strobe.StrobeMod(), toolTip = "Strobe Color."},
+                new ButtonInfo { buttonText = "Take SS", method =() => TakeSS.TakeAScreenShot(), toolTip = "Take A Screen Shot."},
+            },
+            new ButtonInfo[] { // Safety Mods
+                new ButtonInfo { buttonText = "Return to Main", method =() => Global.ReturnHome(), isTogglable = false, toolTip = "Returns to the main page of the menu."},
+                new ButtonInfo { buttonText = "Anti Report", method =() => AntiReport.AntiReportmod(), toolTip = "Disconnect When Someone Tries To Report You."},
+                new ButtonInfo { buttonText = "RPC Protection", method =() => RPCProtection.RPCPROTECTION(), toolTip = "RPC Protection."},
             },
         };
     }
